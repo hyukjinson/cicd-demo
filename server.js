@@ -3,7 +3,7 @@ var os = require('os');
 var http = require('http');
 var handleRequest = function(request, response) {
  response.writeHead(200);
- response.end("Hello Everyone! This is PaaS Test! I'm "+os.hostname());
+ response.end("Hello Everyone! This is NCP Test! I'm "+os.hostname());
 
  //log
  console.log("["+
