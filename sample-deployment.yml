@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-test
+  labels:
+    app: test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: sample-test
+        image: container-registry.kr.ncr.ntruss.com/hjson:latest
+        ports:
+        - containerPort: 8080
